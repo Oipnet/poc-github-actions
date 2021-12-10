@@ -1,13 +1,13 @@
 name: Deploiement sur github-pages
-on:
-  pull_request:
-    branches:
-      - master
-    types: [closed]
+on: push
+#  pull_request:
+#    branches:
+#      - master
+#    types: [closed]
 
 jobs:
   build:
-    if: ${{ github.event.pull_request.merged }}
+    #    if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npm run build:ci
+        run: npm run build
       - name: Archive build
         uses: actions/upload-artifact@v1
         with:
