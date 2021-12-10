@@ -1,14 +1,17 @@
 import { HttpClientModule } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ListPostComponent } from './components/listPost/list-post.component';
+
+@Component({ selector: 'app-list-post', template: '' })
+class ListPostComponentStub {}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, HttpClientModule],
-      declarations: [AppComponent, ListPostComponent],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent, ListPostComponentStub],
       providers: [],
     }).compileComponents();
   });
