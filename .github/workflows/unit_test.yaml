@@ -1,4 +1,4 @@
-name: CI Angular app through github Actions
+name: Test unitaire
 on: push
 jobs:
   build:
