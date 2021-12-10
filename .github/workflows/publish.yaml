@@ -1,9 +1,5 @@
 name: Deploiement sur github-pages
-on:
-  pull_request:
-    branches:
-      - master
-    types: [closed]
+on: push
 
 jobs:
   build:
